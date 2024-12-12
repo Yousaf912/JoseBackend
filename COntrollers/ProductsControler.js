@@ -12,7 +12,7 @@ const ProductsController = {
             res.status(200).send({ allCategories: categories });
         } catch (error) {
 
-            res.status(500).send({ message: 'Server error', error });
+            res.status(500).send({ message: 'Server error', error })
         }
     },
     getAllProducts: async (req, res) => {
@@ -33,10 +33,10 @@ const ProductsController = {
         try {
             const product = await fetch(`https://dummyjson.com/products/${productid}`);
             if (!product) {
-                res.status(400).send({ message: "Product fetching eror" })
+                res.status(400).send({ message: "Product fetching eror" });
             } else {
                 const prodct = await product.json();
-                res.status(201).send({ product: prodct })
+                res.status(201).send({ product: prodct });
             }
         } catch (er) { throw er }
     },
