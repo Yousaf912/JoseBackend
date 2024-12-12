@@ -6,7 +6,7 @@ const App = express();
 const port = process.env.PORT;
 const mongourl = process.env.MONGOURL;
 const cors = require("cors");
-const helmet = require("helmet");
+
 
 
 
@@ -17,16 +17,6 @@ let corsOption = {
 }
 
 App.use(cors(corsOption))
-app.use(helmet({
-    contentSecurityPolicy: {
-        directives: {
-            defaultSrc: ["'self'"],
-            scriptSrc: ["'self'", "https://vercel.live"], 
-            objectSrc: ["'none'"], 
-            styleSrc: ["'self'", "'unsafe-inline'"],
-        }
-    }
-}));
 App.use(express.json())
 App.use('/',router)
 
