@@ -16,8 +16,8 @@ let corsOption = {
 }
 
 App.use(cors(corsOption))
-App.use('/',router)
 App.use(express.json())
+App.use('/',router)
 
 App.listen(port, () => {
     console.log(`server is running on this port ${port}`);
