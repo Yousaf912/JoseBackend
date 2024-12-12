@@ -10,7 +10,7 @@ const cors = require("cors")
 
 
 let corsOption = {
-    origin:'http://localhost:5173',
+    origin:'https://josemart.vercel.app/',
     methods:['GET', 'POST', 'PUT', 'DELETE'],
     credentials:true
 }
