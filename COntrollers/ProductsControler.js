@@ -49,7 +49,7 @@ const ProductsController = {
                 res.status(401).send({ message: 'Fetching eror' });
             } else {
                 const fnal = await products.json()
-                res.status(200).send(fnal);
+                res.status(200).send(fnal)
             }
         } catch (er) { throw er }
     },
@@ -60,10 +60,10 @@ const ProductsController = {
             const val = await fetch(`https://dummyjson.com/products/search?q=${querry}`)
 
             if (!val) {
-                res.status(401).send({ message: "fetching eror" })
+                res.status(401).send({ message: "fetching eror" });
             } else {
                 const fnal = await val.json();
-                res.status(200).send({ prodyct: fnal })
+                res.status(200).send({ prodyct: fnal });
             }
 
 
