@@ -4,25 +4,30 @@ const jwt = require("jsonwebtoken")
 const key = process.env.SECURITYKEY
 
 const SignupLoginCOntroller = {
-    signup: async (req, res) => {
-        try {
-            const findUser = await User.findOne({ mail: req.body.mail });
-            if (findUser) {
-                res.status(400).json({ message: 'User is Registed with this email' })
-            } else {
-                const newPassword = await bcrypt.hash(req.body.password, 10);
-                const newobj = {
-                    ...req.body,
-                    password: newPassword
-                }
-                const user = await User.create(newobj);
-                res.status(201).send({ message: 'SignUp successfully' })
-            }
-        } catch (er) {
-            res.status(400).send(er)
-        }
-    },
+    // signup: async (req, res) => {
+    //     try {
+    //         const findUser = await User.findOne({ mail: req.body.mail });
+    //         if (findUser) {
+    //             res.status(400).json({ message: 'User is Registed with this email' })
+    //         } else {
+    //             const newPassword = await bcrypt.hash(req.body.password, 10);
+    //             const newobj = {
+    //                 ...req.body,
+    //                 password: newPassword
+    //             }
+    //             const user = await User.create(newobj);
+    //             res.status(201).send({ message: 'SignUp successfully' })
+    //         }
+    //     } catch (er) {
+    //         res.status(400).send(er)
+    //     }
+    // },
 
+    singup:async(req,res)=>{
+        try{
+            await res.send({message:'hello i am singup'})
+        }catch(er){throw er}
+    },
 
     login: async (req, res) => {
         try {
