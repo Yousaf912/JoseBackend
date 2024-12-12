@@ -10,13 +10,16 @@ const cors = require("cors");
 
 
 
-let corsOption = {
-    origin:'https://josemart.vercel.app',
-    methods:['POST','GET', 'PUT', 'DELETE'],
-    credentials:true
-}
 
-App.use(cors(corsOption))
+const corsOptions = {
+    origin: 'https://josemart.vercel.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials:true
+};
+
+App.use(cors(corsOptions));
+
 App.use(express.json())
 App.use('/',router)
 
