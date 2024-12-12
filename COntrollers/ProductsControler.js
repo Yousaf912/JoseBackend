@@ -46,7 +46,7 @@ const ProductsController = {
             const categoryName = req.params.name;
             const products = await fetch(`https://dummyjson.com/products/category/${categoryName}`);
             if (!products) {
-                res.status(401).send({ message: 'Fetching eror' })
+                res.status(401).send({ message: 'Fetching eror' });
             } else {
                 const fnal = await products.json()
                 res.status(200).send(fnal);
