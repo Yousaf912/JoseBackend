@@ -4,7 +4,7 @@ const { default: mongoose } = require('mongoose');
 const router = require('./Routes/Routes');
 const App = express();
 const port = process.env.PORT;
-const mongourl = process.env.MONGOURL;
+const mongourl = process.env.MONGO_URL;
 const cors = require("cors");
 
 
