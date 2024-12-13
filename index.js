@@ -12,7 +12,7 @@ const cors = require("cors");
 
 
 const corsOptions = {
-    origin: 'https://josemart.vercel.app',
+    origin: `https://josemart.vercel.app || http://localhost:5173`,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials:true
