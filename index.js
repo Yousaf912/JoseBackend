@@ -12,9 +12,8 @@ const localurl = 'http://localhost:5173'
 
 
 
-
 const corsOptions = {
-    origin: process.env.NODE_ENV === 'development' ? deployurl : localurl,
+    origin: deployurl,
     methods: ['POST','GET',  'PUT', 'DELETE'],
     credentials:true
 };
@@ -28,6 +27,7 @@ App.listen(port, () => {
     console.log(`server is running on this port ${port}`);
     mongoose.connect(mongourl).then(() => {
         console.log('mongodb is connect');
+
     }).catch((er) => {
         console.log(er);
     })
