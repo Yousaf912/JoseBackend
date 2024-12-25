@@ -6,13 +6,15 @@ const App = express();
 const port = process.env.PORT;
 const mongourl = process.env.MONGO_URL;
 const cors = require("cors");
+const deployurl ='https://josemart.vercel.app';
+const localurl = 'http://localhost:5173'
 
 
 
 
 
 const corsOptions = {
-    origin: `https://josemart.vercel.app || http://localhost:5173`,
+    origin: process.env.NODE_ENV === 'production' ? deployurl : localurl,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials:true
