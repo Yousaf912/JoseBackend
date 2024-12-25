@@ -16,7 +16,6 @@ const localurl = 'http://localhost:5173'
 const corsOptions = {
     origin: process.env.NODE_ENV === 'production' ? deployurl : localurl,
     methods: ['POST','GET',  'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
     credentials:true
 };
 
