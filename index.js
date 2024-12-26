@@ -13,9 +13,12 @@ const localurl = 'http://localhost:5173'
 
 
 const corsOptions = {
-    origin: deployurl,
-    methods: ['POST','GET',  'PUT', 'DELETE'],
-    credentials:true
+    origin: deployurl, 
+    methods: ['POST', 'GET', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true, 
+    preflightContinue: false,
+    optionsSuccessStatus: 204
 };
 
 App.use(cors(corsOptions));
